@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blaze Pizza</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/blaze_pizza.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <img class="logo" src="/images/blaze_pizza.png" alt="pizza-logo">
+          <a href="../index.html">  Blaze Pizza </a>
+          </div>
+          <a class="cart-link-sm" href="./templates/cart.html">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="order-quantity"></div>
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
+        <ul class="links">
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-house"></i>
+              Главная 
+            </a>
+          </li>
+          <li>
+            <a href="./templates/menu.html">
+              <i class="fa-solid fa-book-open"></i>  
+              Меню
+            </a>
+          </li>
+          <li>
+            <a href="./templates/contact.html">
+              <i class="fa-solid fa-address-card"></i>
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <a class="cart-link" href="./templates/cart.html">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="order-quantity"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="img-wrapper">
+        <div class="pizza-image"></div>
+      </div>
+      <div class="call-to-action">
+        <h2>Лучшее время для <span class="highlighted-text">пиццы</span></h2>
+        <h2><span class="highlighted-text"> </span>сейчас!</h2>
+        <div class="btn-container">
+          <a href="./templates/menu.html">
+            <button class="btn cta-btn">Меню</button>
+          </a>
+          <a href="./templates/custom.html">
+            <button class="btn cta-btn">Собрать пиццу</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./scripts/nav.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
