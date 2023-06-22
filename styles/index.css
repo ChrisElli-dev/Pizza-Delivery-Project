@@ -1,0 +1,120 @@
+body {
+  overflow: hidden;
+}
+.container {
+  min-height: 100vh;
+  background-image: url('/images/background.png');
+  display: flex;
+  justify-content: space-between;
+}
+.img-wrapper {
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+}
+.pizza-image {
+  background-image: url('/images/пепперони_760x760.webp');
+  flex-grow: 1;
+  max-height: 70vh;
+  min-width: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.call-to-action {
+  color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 4rem;
+  align-self: center;
+  min-width: 30%;
+  max-width: 50%;
+  flex-grow: 1;
+}
+h2 {
+  font-size: 3.7rem;
+}
+.highlighted-text {
+  color:var(--highlighted-color)
+}
+.btn-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  max-width: 400px;
+}
+.cta-btn {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: .8rem 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.cta-btn:focus {
+  background-color: var(--highlighted-color);
+  box-shadow: 0px 0px 10px 3px var(--highlighted-color); 
+}
+@media (hover:hover) {
+  .cta-btn:hover {
+    background-color: var(--highlighted-color);
+    box-shadow: 0px 0px 10px 3px var(--highlighted-color); 
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+  .btn-container {
+    width: 350px;
+  }
+  .btn {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 860px) {
+  h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-wrapper {
+    justify-content: center;
+    max-width: 70%;
+    width: 70%;
+    flex-grow: 1.5;
+  }
+  .call-to-action {
+    align-items: center;
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+  .btn-container {
+    max-width: 92%
+  }
+  .cta-btn {
+    font-size: .9rem;
+  }
+}
