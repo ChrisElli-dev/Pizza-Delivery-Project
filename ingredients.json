@@ -1,0 +1,15 @@
+{"sizes": 
+
+[{"id":1,"size":"s","price":"299"},
+{"id":2,"size":"m","price":"499"},
+{"id":3,"size":"l","price":"819"}],
+
+"ingredients":
+
+[{"id":"cheese-topping","topping":"Сыр","price":"69","imgUrl":"https://i.ibb.co/HFkc3p9/cheese.png","zIndex":1},
+{"id":"bacon-topping","topping":"Бекон","price":"119","imgUrl":"https://i.ibb.co/5FmbKNY/bacon.png","zIndex":3},
+{"id":"meatballs-topping","topping":"Тефтели","price":"99","imgUrl":"https://i.ibb.co/B2ymVDk/meatballs.png","zIndex":3},
+{"id":"olives-topping","topping":"Оливки","price":"59","imgUrl":"https://i.ibb.co/WpppqxX/olives.png","zIndex":5},
+{"id":"parsley-topping","topping":"Зелень","price":"49","imgUrl":"https://i.ibb.co/47Wt8xy/parsley.png","zIndex":100},
+{"id":"pepperoni-topping","topping":"Пепперони","price":"109","imgUrl":"https://i.ibb.co/wSRTqK0/pepperoni.png","zIndex":2},
+{"id":"peppers-topping","topping":"Перец","price":"59","imgUrl":"https://i.ibb.co/mFSCXMm/peppers.png","zIndex":4}]}
