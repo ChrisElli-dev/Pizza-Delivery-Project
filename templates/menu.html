@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/menu.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blaze_pizza.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <img class="logo" src="/images/blaze_pizza.png" alt="pizza-logo">
+            <a href="../index.html">  Blaze Pizza </a>
+          </div>
+          <a class="cart-link-sm" href="./cart.html">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="order-quantity"></div>
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- Навигационная панель -->
+        <ul class="links">
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-house"></i>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="./menu.html">
+              <i class="fa-solid fa-book-open"></i>  
+              Меню
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html">
+              <i class="fa-solid fa-address-card"></i>
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <a class="cart-link" href="./cart.html">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="order-quantity"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="container">
+      <div id="menu-grid" class="menu-grid">
+        <div class="single-pizza">
+          <img class="create-pizza-img" src="/images/своя_760x760.webp" alt="create-pizza">
+          <div class="create-pizza-info">
+            <h3 class="pizza-info-heading">Соберите свою пиццу!</h3>
+            <p class="create-info-desc">Выберите ингридиенты 
+              и сделайте свою собственную пиццу.</p>
+          </div>
+          <a class="create-btn-link" href="./custom.html">
+            <button class="create-btn btn">Собрать сейчас</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cart-btn-container">
+      <a href="./cart.html">
+        <button class="go-to-cart-btn btn">В корзину</button>
+      </a>
+    </div>
+  </main>
+
+  <script src="../scripts/nav.js"></script>
+  <script src="../scripts/menu.js" type="module"></script>
+</body>
+</html>
