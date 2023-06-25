@@ -1,0 +1,219 @@
+body {
+  --inactive-btn: hsl(229, 13%, 46%);
+
+  max-height: 100vh;
+  background-image: url('/images/background.png');
+}
+.create-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+.container {
+  max-width: 1300px;
+  margin: 2rem auto 0;
+}
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+.create-pizza-desc {
+  font-size: 1.2rem;
+  color: var(--background-color);
+}
+.pizza-constructor-container {
+  display: flex;
+  justify-content: space-around;
+}
+.pizza-constructor-image {
+  width: 30vw;
+  height: 30vw;
+  position: relative;
+}
+.pizza-constructor-image .pizza-base-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+.pizza-settings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 45%;
+}
+.pizza-settings-container h3 {
+  align-self: flex-start;
+}
+.pizza-topping-image {
+  z-index: 1;
+  position: absolute;
+  left: 7.5%;
+  top: 2%;
+  width: 85%;
+  height: auto;
+}
+.topping-btn-container,
+.size-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+  max-width: 90%;
+  margin: 1rem 0;
+}
+.size-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: capitalize;
+}
+.topping-btn,
+.size-btn {
+  font-family: 'Signika', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #F5F3EF;
+  color: var(--inactive-btn);
+  padding: 15px 5px;
+  margin: .5rem;
+  min-width: 100px;
+  border-radius: 10px;
+  border: 2px solid var(--inactive-btn);
+  cursor: pointer;
+}
+.topping-btn-container .active,
+.size-btn-container .active {
+  color: #F6752C;
+  border: 2px solid var(--highlighted-color);
+  box-shadow: 0px 3px 10px rgba(26, 26, 33, 0.1);
+}
+
+.cart-btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.cart-btn-container a {
+  text-decoration: none;
+}
+.add-to-cart-btn {
+  background-color: #F6752C;
+  color: var(--text-color);
+  padding: .8rem 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 25px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-to-cart-btn:hover,
+.add-to-cart-btn:focus {
+  background-color: var(--background-color);
+  color: var(--highlighted-color); 
+}
+.add-to-cart-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--inactive-btn);
+  color: var(--text-color)
+}
+.total-price {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1360px) {
+  .container {
+    max-width: 1250px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 1100px;
+    margin: 2rem 1.5rem; 
+  }
+  h1 {
+    margin: .6rem 0;
+  }
+  .pizza-settings-container {
+    max-width: 50%;
+  }
+  .topping-btn-container,
+  .size-btn-container {
+    max-width: 100%;
+    margin: .7rem 0;
+  }
+  .topping-btn,
+  .size-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 5px;
+    margin: .5rem;
+    min-width: 90px;
+  }
+  .size-btn span {
+    font-weight: 300;
+  }
+  .cart-btn-container {
+    margin: 1rem 0;
+  }
+  .add-to-cart-btn {
+    padding: .6rem 1rem;
+    font-size: 1.3rem;
+    width: 300px;
+  }
+  .pizza-constructor-container {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  .container {
+    max-width: 920px;
+    margin: 1.1rem 1.5rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .pizza-constructor-container {
+    margin: 2.5rem 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .pizza-constructor-container {
+    margin: 1.5rem 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1, .create-pizza-desc {
+    text-align: center;
+  }
+  .pizza-constructor-image {
+    width: 50vw;
+    height: 50vw;
+  }
+  .pizza-settings-container {
+    max-width: 90%;
+  }
+  .topping-btn-container,
+  .size-btn-container {
+    margin: 1.1rem 0 1.3rem 0;
+  }
+  .topping-btn {
+    padding: 13px 5px;
+  }
+  .add-to-cart-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    width: 300px;
+  }
+  .total-price {
+    font-size: 1rem;
+  }
+}
