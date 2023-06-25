@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание Пиццы</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/custom.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blaze_pizza.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <img class="logo" src="/images/blaze_pizza.png" alt="pizza-logo">
+            <a href="../index.html">  Blaze Pizza </a>
+          </div>
+          <a class="cart-link-sm" href="./cart.html">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="order-quantity"></div>
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
+        <ul class="links">
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-house"></i>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="./menu.html">
+              <i class="fa-solid fa-book-open"></i>  
+              Меню
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html">
+              <i class="fa-solid fa-address-card"></i>
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <a class="cart-link" href="./cart.html">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="order-quantity"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="create-section">
+      <div class="container">
+        <h1>Соберите свою собственную пиццу</h1>
+        <p class="create-pizza-desc">Создайте свою собственную пиццу, выбрав ее размер и начинку! Выберите один из трех размеров и более 6 видов начинок.</p>
+        <section class="pizza-constructor-container">
+          <div class="pizza-constructor-image">
+            <img class="pizza-base-image" src="https://i.ibb.co/8Bk52SY/pizza-base.png" alt="pizza base">
+          </div>
+          <div class="pizza-settings-container">
+            <h3>Выберите размер: </h3>
+            <div class="size-btn-container">
+            
+            </div>
+            <h3>Выберите начинку:</h3>
+            <div class="topping-btn-container">
+             
+            </div>
+          </div>
+        </section>
+        <div class="cart-btn-container">
+          <button id="add-btn" class="add-to-cart-btn btn">
+            Добавить в корзину
+            <span class="total-price"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="../scripts/nav.js"></script>
+  <script src="../scripts/custom.js" type="module"></script>
+  <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>
