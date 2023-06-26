@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blaze_pizza.png">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/cart.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <img class="logo" src="/images/blaze_pizza.png" alt="pizza-logo">
+            <a href="../index.html">  Blaze Pizza </a>
+          </div>
+          <a class="cart-link-sm" href="./cart.html">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="order-quantity"></div>
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <ul class="links">
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-house"></i>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="./menu.html">
+              <i class="fa-solid fa-book-open"></i>
+              Меню
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html">
+              <i class="fa-solid fa-address-card"></i>
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <a class="cart-link" href="./cart.html">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="order-quantity"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <h1>Корзина</h1>
+      <div class="cart">
+      </div>
+      <div class="total-cost">
+        <p>Всего: </p>
+        <p id="total-cost"></p>
+      </div>
+      <div class="confirm-div">
+        <a href="./form.html">
+          <button id="confirm-btn" type="button">Подтвердите заказ</button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/nav.js"></script>
+  <script type="module" src="../scripts/main.js"></script>
+  <script type="module" src="../scripts/cart.js"></script>
+</body>
+</html>
