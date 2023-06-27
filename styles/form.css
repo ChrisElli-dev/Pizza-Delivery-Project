@@ -1,0 +1,60 @@
+body {
+  background-image: url('/images/background.png');
+}
+h2 {
+  margin: 2rem 0;
+}
+.container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+  max-width: 500px;
+  width: 80vw;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+.confirm-div label {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.confirm-div input {
+  padding: .5rem;
+  font-size: 1.2rem;
+  color: var(--background-color);
+  border-radius: 10px;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+.confirm-div button {
+  font-size: 1.2rem;
+  padding: .7rem;
+  font-weight: 600;
+  background-color: var(--highlighted-color);
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+}
+.confirm-div button:hover,
+.confirm-div button:focus {
+  background-color: var(--background-color);
+  color: var(--highlighted-color);
+}
+
+@media screen and (max-width: 420px) {
+  .confirm-div {
+    width: 95vw;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+}
