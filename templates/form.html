@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма заказа</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blaze_pizza.png">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/form.css">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <img class="logo" src="/images/blaze_pizza.png" alt="pizza-logo">
+            <a href="../index.html">  Blaze Pizza </a>
+          </div>
+          <a class="cart-link-sm" href="./cart.html">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="order-quantity"></div>
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
+        <ul class="links">
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-house"></i>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="./menu.html">
+              <i class="fa-solid fa-book-open"></i>  
+              Меню
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html">
+              <i class="fa-solid fa-address-card"></i>
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <a class="cart-link" href="./cart.html">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="order-quantity"></div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="confirm-div">
+        <h2>Введите свои контакты</h2>
+        <form method="post">
+          <label for="name">Имя: </label>
+          <input id="name-input" type="text" name="name" placeholder="Ваше имя">
+          <label for="phone">Телефон: </label>
+          <input id="phone-input" type="tel" name="phone" placeholder="Ваш номер телефона">
+          <label for="email">Почта: </label>
+          <input id="email-input" type="email" name="email" placeholder="Ваша почта">
+          <button id="confirm-btn" class="btn" type="submit">Подтвердить</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/nav.js"></script>
+  <script type="module" src="../scripts/main.js"></script>
+  <script type="module" src="../scripts/formConfirmation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
