@@ -1,7 +1,5 @@
 import {displayOrderQuantity} from './displayOrderQuantity.js';
 
-// maybe add events to enter key press
-
 const url = '/ingredients.json';
 const sizeBtnDiv = document.querySelector('.size-btn-container');
 const toppingBtnDiv = document.querySelector('.topping-btn-container');
@@ -30,7 +28,7 @@ function displaySizes(INGREDIENTS) {
     const sizeBtn = document.createElement('button');
     sizeBtn.className = 'size-btn';
     sizeBtn.innerHTML = `<span class="pizza-size">${size.size}</span><span>${size.price}₽</span>`;
-    // set default size of medium
+  // устанавливаем дефолтный размер пиццы на медиум ( средняя пицца ) 
     if (size.size === 'm') {
       sizeBtn.classList.add('active');
     }
@@ -63,12 +61,12 @@ function displayIngredients(INGREDIENTS) {
   });
 }
 
-// add topping image to the pizza
+// добавление изображения дополнений (топингов) к пицце
 function addTopping(e, INGREDIENTS) {
   const currentTopping = e.target;
   const toppingFromDb = INGREDIENTS["ingredients"].find(el => el.topping === currentTopping.textContent);
 
-  // add topping image
+  // добавление изображений топингов
   if (currentTopping.classList.contains('active')) {
     const toppingImg = document.createElement('img');
     toppingImg.src = toppingFromDb.imgUrl;
@@ -78,7 +76,7 @@ function addTopping(e, INGREDIENTS) {
     toppingImg.style.zIndex = toppingFromDb.zIndex;
     pizzaConstructorDiv.appendChild(toppingImg);
   } else {
-    // remove topping image
+    // удаление
     const displayedToppings = document.querySelectorAll('.pizza-topping-image');
 
     for (let img of displayedToppings) {
@@ -91,14 +89,15 @@ function addTopping(e, INGREDIENTS) {
 
 let total = 0;
 function updateTotalCost(INGREDIENTS) {
-  // add pizza size price
+  // добавляем цену за размер пицц ( маленькая средняя и большая имеют разную цену)
+  // они находтся в ingridients.json
   const selectedSize = sizeBtnDiv.querySelector('.active .pizza-size');
   const sizeFromDb = INGREDIENTS["sizes"].find(el => el.size === selectedSize.textContent);
   total = Number(sizeFromDb.price);
 
-  // add toppings price
+  // добавляем цену топингов 
   const selectedToppings = [...toppingBtnDiv.querySelectorAll('.active')];
-  // if no toppings were selected, disable add button
+ // если человек не выбрал ни одной начинки для пиццы, отключаем кнопку добавления
   if (selectedToppings.length < 1) {
     addBtn.setAttribute("disabled", "disabled");
   } else {
@@ -114,7 +113,7 @@ function updateTotalCost(INGREDIENTS) {
   totalPrice.textContent = `${total}₽`;
 }
 
-// add pizza info into local storage
+// добавляем информацию о пицце в локальное хранилище
 function addPizzaToCart() {
   const orders = localStorage.getItem('pizzas') ?? '[]';
   const storedOrders = JSON.parse(orders);
@@ -128,26 +127,28 @@ function addPizzaToCart() {
   customPizza.price = total;
 
   let isMatchFound = false;
-  // increase amount of repeated pizzas
-  ordersArray = storedOrders.reduce((acc, obj) => {
-    // if such order is already in the array
-    if (obj.title === customPizza.title && obj.price === customPizza.price) {
-      // increase its amount
-      obj.amount++;
-      isMatchFound = true;
-    }
-    acc.push(obj);
-    return acc;
+// Проверяем наличие повторяющихся заказов пиццы
+ordersArray = storedOrders.reduce((acc, obj) => {
+  // Если такой заказ уже есть в массиве
+  if (obj.title === customPizza.title && obj.price === customPizza.price) {
+    // Увеличиваем количество таких заказов
+    obj.amount++;
+    isMatchFound = true;
+  }
+  acc.push(obj);
+  return acc;
   }, []);
 
-  // if there's no such order in the array
+  // Если такого заказа еще нет в массиве
   if (!isMatchFound) {
-    // add it to the array
+    // Добавляем его в массив
     ordersArray.push(customPizza);
   } else {
-    // set back the flag to false for the next iteration
+    // Сбрасываем флаг для следующей итерации
     isMatchFound = false;
   }
-  // storedOrders.push(customPizza);
+
+  // Сохраняем массив заказов пиццы в локальном хранилище
   localStorage.setItem('pizzas', JSON.stringify(ordersArray));
-}
+
+  }
