@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function displayOrder() {
-  // if no orders were made
+  // если заказов не было
   if (storedOrders === null || storedOrders.length === 0) {
     displayEmptyCartMsg();
   } else {
@@ -67,7 +67,7 @@ function displayEmptyCartMsg() {
 }
 
 function updateAmount(e, operation) {
-  // if event is click then e.target is <i>, if event is Enter key then e.target is <button>
+  // если событием является клик, то e.target будет <i>, если событием будет клавиша Enter, то e.target будет <button>
   const orderDiv = e.target.classList.contains('fa-solid')
     ? e.target.parentElement.parentElement.parentElement.parentElement
     : e.target.parentElement.parentElement.parentElement;
@@ -80,7 +80,7 @@ function updateAmount(e, operation) {
   } else if (operation === 'decrease') {
     obj.amount = obj.amount - 1;
   }
-  // remove pizza if amount is < 1
+ // удаляем пиццу, если количество < 1 
   if (obj.amount < 1) {
     storedOrders = storedOrders.filter(item => item.title !== obj.title || item.price !== obj.price || item.size !== obj.size);
     cartDiv.removeChild(orderDiv);
@@ -94,7 +94,7 @@ function updateAmount(e, operation) {
   updateTotalCost();
 }
 
-// check if after removing item a separation line was left
+// проверяем, не осталась ли после удаления элемента разделительная линия
 function removeLastLine() {
   let orderDivs = [...document.querySelectorAll('.order-container')];
   const lastOrderDiv = orderDivs[orderDivs.length - 1];
@@ -104,7 +104,7 @@ function removeLastLine() {
   }
 }
 
-// if after removing item the cart becomes empty, display message
+// если после удаления товара корзина пустая ( заказов в корзине нет ), вывести сообщение ниже
 function checkEmptyCart() {
   if (storedOrders.length === 0) {
     displayEmptyCartMsg();
