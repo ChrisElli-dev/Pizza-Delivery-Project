@@ -60,19 +60,19 @@ function displayMenuItems(MENU) {
   });
 }
 
-// change price on size button click
+// Изменение цены при выборе размера пиццы
 function changeSize(sizeBtn, MENU) {
   const currentSize = sizeBtn.innerText;
   const singlePizza = sizeBtn.parentElement.parentElement;
   const pizzaTitle = singlePizza.querySelector('.pizza-info-heading').innerText;
-  // find object with the name of current pizza
+  // Находим объект с названием текущей пиццы
   const pizzaFromDb = MENU.find(elem => elem.title === pizzaTitle);
   let newPrice = pizzaFromDb.price[currentSize.toLowerCase()];
   const priceElement = singlePizza.querySelector('.pizza-price');
-  // display new price
-  // if the pizza has a discount
+  // Отображение новой цены
+  // Если на пиццу есть скидка
   if (pizzaFromDb.isDiscount) {
-    // check if discount wasn't already displayed (for M size by default)
+    // Проверяем, не была ли скидка уже отображена (для размера M по умолчанию)
     if (!priceElement.querySelector('.discount-old-price')) {
       newPrice = setDiscountPrice(newPrice, discountPercent);
     }
@@ -85,19 +85,19 @@ function changeSize(sizeBtn, MENU) {
   }
 }
 
-// add discount tag on pizza
+// Добавление тега скидки на пиццу
 function setDiscountTag(item, percent) {
   item.querySelector('.size-btn-container')
     .insertAdjacentHTML('afterend', `<div class="discount-tag">-${percent}%</div>`);
 }
 
-// calculate price with discount
+// Расчет цены со скидкой
 function setDiscountPrice(price, percent) {
   price = (price - (price * percent/100)).toFixed(2);
   return price;
 }
 
-// add order to local storage
+// Добавление заказа в локальное хранилище
 function addPizzaToCart(e, MENU) {
   const currentPizza = e.target.parentElement;
   const currentSize = currentPizza.querySelector('.active').textContent.toLowerCase();
@@ -113,21 +113,21 @@ function addPizzaToCart(e, MENU) {
 
   let isMatchFound = false;
   ordersArray = storedOrders.reduce((acc, obj) => {
-    // if such order is already in the array
+    // Если такой заказ уже есть в массиве
     if (obj.title === pizzaDataToStore.title && obj.price === pizzaDataToStore.price) {
-      // increase its amount
+      // Увеличиваем его количество
       obj.amount++;
       isMatchFound = true;
     }
     acc.push(obj);
     return acc;
-  }, [])
-  // if there's no such order in the array
+  }, []);
+  // Если такого заказа еще нет в массиве
   if (!isMatchFound) {
-    // add it to the array
+    // Добавляем его в массив
     ordersArray.push(pizzaDataToStore);
   } else {
-    // set back the flag to false for the next iteration
+    // Сбрасываем флаг для следующей итерации
     isMatchFound = false;
   }
   localStorage.setItem('pizzas', JSON.stringify(ordersArray));
