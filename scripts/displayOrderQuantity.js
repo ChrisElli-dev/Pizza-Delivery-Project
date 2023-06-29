@@ -3,7 +3,7 @@ export function displayOrderQuantity() {
   const quantityDiv = document.querySelectorAll('.order-quantity');
   let amount;
 
-  // if orders quantity > 0
+  // если количество заказов > 0
   if (storedOrders) {
     const ordersArray = JSON.parse(storedOrders);
     if(ordersArray.length) {
