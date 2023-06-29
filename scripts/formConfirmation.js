@@ -99,7 +99,7 @@ function getTotalCost() {
 
 function sendEmail() {
   Email.send({
-    SecureToken : "Djts487AJ_22SLcHFaeaz",
+    SecureToken : "9ec025f6-ae91-4d08-9936-393882cac9c9",
     To : `${emailInput.value}`,
     From : "galimsarapov@gmail.com",
     Subject : "Подтверждение заказа",
